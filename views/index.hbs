@@ -1,2 +1,27 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="container">
+
+    <div class="row banner-row">
+        <div class="col-md-12 text-center banner-col">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+
+    <div class="row burger-action-row">
+        <div class="col-6 text-center burgers-created-col">
+            CREATED BURGERS
+        </div>
+        <div class="col-6 text-center burgers-devoured-col">
+            DEVOURED BURGERS
+        </div>
+    </div>
+
+    <div class="row burger-creation-form-row">
+        <div class="col-md-12 text-center burger-creation-form-col">
+            <form action="/burgers/create" method="POST">
+                <input size="50" placeholder="Type burger name here and click submit!" type="text" class="user-text" name="burgerName" value="" />
+                <button type="submit" class="btn btn-primary" id="burger-creation-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</div>
