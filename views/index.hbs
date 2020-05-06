@@ -1,8 +1,21 @@
 <div class="container">
 
-    <div class="row banner-row">
-        <div class="col-md-12 text-center banner-col">
-            <h1>{{title}}</h1>
+    <div class="py-1 jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Eat-Da-Burger</h1>
+            <p class="lead">Eat and Devour Burgers!!!</p>
+        </div>
+    </div>
+
+    <div class="row my-2 burger-creation-form-row">
+        <div class="col-md-12 text-center burger-creation-form-col">
+            <form action="/burgers/create" method="POST">
+                <div class="form-group">
+                    <input size="50" placeholder="Type burger name here and click submit!" type="text" class="user-text"
+                        name="burgerName" value="" />
+                    <button type="submit" class="btn btn-primary" id="burger-creation-submit">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -43,15 +56,4 @@
             {{/each}}
         </div>
     </div>
-
-    <div class="row burger-creation-form-row">
-        <div class="col-md-12 text-center burger-creation-form-col">
-            <form action="/burgers/create" method="POST">
-                <input size="50" placeholder="Type burger name here and click submit!" type="text" class="user-text"
-                    name="burgerName" value="" />
-                <button type="submit" class="btn btn-primary" id="burger-creation-submit">Submit</button>
-            </form>
-        </div>
-    </div>
-
 </div>
