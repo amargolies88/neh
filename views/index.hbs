@@ -8,7 +8,24 @@
 
     <div class="row burger-action-row">
         <div class="col-6 text-center burgers-created-col">
-            CREATED BURGERS
+            <div class="row burgers-created-title-row">
+                <div class="col burgers-created-title-col">
+                    <h3>CREATED BURGERS</h3>
+                </div>
+            </div>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <div class="row burgers-created-burgers-row">
+                <div class="col burgers-created-burger-col">
+                    <div>
+                        {{this.id}}. {{this.burger_name}}
+                        <button>Devour</button>
+                    </div>
+
+                </div>
+            </div>
+            {{/unless}}
+            {{/each}}
         </div>
         <div class="col-6 text-center burgers-devoured-col">
             DEVOURED BURGERS
@@ -18,7 +35,8 @@
     <div class="row burger-creation-form-row">
         <div class="col-md-12 text-center burger-creation-form-col">
             <form action="/burgers/create" method="POST">
-                <input size="50" placeholder="Type burger name here and click submit!" type="text" class="user-text" name="burgerName" value="" />
+                <input size="50" placeholder="Type burger name here and click submit!" type="text" class="user-text"
+                    name="burgerName" value="" />
                 <button type="submit" class="btn btn-primary" id="burger-creation-submit">Submit</button>
             </form>
         </div>
