@@ -15,20 +15,32 @@
             </div>
             {{#each burgers}}
             {{#unless this.devoured}}
-            <div class="row burgers-created-burgers-row">
-                <div class="col burgers-created-burger-col">
-                    <div>
-                        {{this.id}}. {{this.burger_name}}
-                        <button>Devour</button>
-                    </div>
-
+            <div class="row my-1 burgers-created-burgers-row">
+                <div class="col-md-9 burgers-created-burger-col">
+                    {{this.id}}. {{this.burger_name}}
+                </div>
+                <div class="col-md-3 burgers-created-devour-button-col">
+                    <button value={{this.id}} class="devour-btn btn btn-warning">Devour</button>
                 </div>
             </div>
             {{/unless}}
             {{/each}}
         </div>
         <div class="col-6 text-center burgers-devoured-col">
-            DEVOURED BURGERS
+            <div class="row burgers-devoured-title-row">
+                <div class="col burgers-devoured-title-col">
+                    <h3>DEVOURED BURGERS</h3>
+                </div>
+            </div>
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="row my-1 burgers-devoured-burgers-row">
+                <div class="col-md-12 burgers-devoured-burger-col">
+                    {{this.id}}. {{this.burger_name}}
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
         </div>
     </div>
 
